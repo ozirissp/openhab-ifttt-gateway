@@ -1,0 +1,22 @@
+var String iftttKey = "change-me"
+
+rule "Send IFTTT_OUT Command"
+when
+    Item IFTTT_OUT received command
+then
+    var iftttCommand = receivedCommand
+
+    if(iftttCommand != "")    {
+        logInfo("IFTTT_OUT", "IFTTT send command : "+iftttCommand)
+        var response = sendHttpGetRequest("https://maker.ifttt.com/trigger/"+iftttCommand+"/with/key/"+iftttKey)        
+        logInfo("IFTTT_OUT", "IFTTT sent response : "+response)
+    }
+end
+
+rule "Receive IFTTT_IN Command"
+when
+    Item IFTTT_IN received command
+then
+    var iftttCommand = receivedCommand
+    logInfo("IFTTT_IN", "IFTTT receive command : "+iftttCommand)
+end

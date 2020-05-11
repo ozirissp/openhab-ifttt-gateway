@@ -1,0 +1,11 @@
+{
+    "server": {
+        "port": 10000,
+        "hostname": "0.0.0.0"
+    },
+    "openhab": {
+        "uri": "http://openhab:8080/",
+        "tag": "IFTTT"
+    },
+    "token": "TheSecretTokenOfYourChoice"
+}
