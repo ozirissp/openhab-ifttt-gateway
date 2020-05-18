@@ -63,7 +63,7 @@ npm install
 Start the gateway with :
 
 ```
-node app.js
+node index.js
 ```
 
 To start as a service see bellow : "Extra : Start as a service"
@@ -154,6 +154,6 @@ And then add the gateway as a service with this commands
 
 ```
 pm2 startup
-pm2 start app.js
+pm2 start index.js
 pm2 save
 ```
