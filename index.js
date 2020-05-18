@@ -117,6 +117,18 @@ const handleRequest = function (req, res, successFunction) {
             return;
         }
 
+        if (item === undefined) {
+            console.warn(`Item is not defined`);
+            res.status(400).send('Item is not defined');
+            return;
+        }
+
+        if (value === undefined) {
+            console.warn(`Value is not defined`);
+            res.status(400).send('Value is not defined');
+            return;
+        }
+
         isItemExposed(item)
             .then(exposed => {
                 if (!exposed) {
